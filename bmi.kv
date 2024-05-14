@@ -1,0 +1,37 @@
+<UI>:
+    id:scr_manager
+    MainScreen:
+    LoginScreen:
+
+# page 2 *******
+<LoginScreen>:
+    name: "login_scr"
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols:1
+            TextInput:
+                id:txt_weight
+                hint_text:"input weight"
+            TextInput:
+                id:txt_height
+                hint_text:"input height"
+            Button:
+                id:btn_bmi
+            Label:
+                id:lbl_bmi
+                text: 'bmi = '
+
+
+# page 1 *******
+<MainScreen>:
+    name:"main_scr"
+    BoxLayout:
+        orientation: 'vertical' 
+        Image:
+            source:"bmi.jpg"
+        Button:
+            text: 'คำนวณ'
+            font_name:"tahoma"
+            size_hint: 1,0.20
+            on_press: app.root.current = "login_scr"

@@ -1,0 +1,95 @@
+<UI>:
+    id:scr_manager
+    MainScreen:
+    Register:
+<MainScreen>:
+    name: "Scr1"
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: 0.6, 0.4, 1, 1  # สีพื้นหลัง สีม่วงอ่อน
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        GridLayout:
+            cols: 1   
+            Image:  # layer1
+                source: "DLT.png"
+            Button:
+                text: "เข้าสู่ระบบ"
+                size_hint: 0.30, 0.20
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                font_name: "tahoma"
+                background_color: 0.302, 0.714, 0.675, 1  # ค่าสี RGBa สำหรับปุ่ม
+                on_press: app.root.current = "Scr2"
+            Button:
+                text: "ลงทะเบียนใหม่"
+                size_hint: 0.30, 0.20
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                font_name: "tahoma"
+                background_color: 0.302, 0.714, 0.675, 1  # ค่าสี RGBa สำหรับปุ่ม
+                on_press: app.root.current = "Scr2"
+            Button:
+                text: "For Foreigner"
+                size_hint: 0.30, 0.20
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                font_name: "tahoma"
+                background_color: 0.302, 0.714, 0.675, 1  # ค่าสี RGBa สำหรับปุ่ม
+                on_press: app.root.current = "Scr2"
+<Register>:
+    name: 'Scr2'
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols: 1   
+            Image:  # layer1
+                source: "DLT.png"
+            Label:
+                text: 'ระบุเลขบัตรประชาชน'
+                font_name: "tahoma"
+                font_size: '24sp'
+                size_hint: 1, 1
+            TextInput:
+                id: password
+                hint_text: 'ระบุเลขบัตรประชาชน'
+                font_name: "tahoma"
+                password: True
+                multiline: False
+                size_hint: 1, 1
+                background_color: 255, 99, 71, 0.2  # ค่าสี RGBa สำหรับปุ่ม
+
+            TextInput:
+                id: password
+                hint_text: 'ระบุเลขบัตรประชาชนอีกครั้ง'
+                font_name: "tahoma"
+                password: True
+                multiline: False
+                size_hint: 1, 1
+                background_color: 255, 99, 71, 0.2  # ค่าสี RGBa สำหรับปุ่ม
+
+            TextInput:
+                id: password
+                hint_text: 'ระบุเบอร์โทร'
+                font_name: "tahoma"
+                password: True
+                multiline: False
+                size_hint: 1, 1
+                background_color: 255, 99, 71, 0.2  # ค่าสี RGBa สำหรับปุ่ม
+
+            TextInput:
+                id: password
+                hint_text: 'ระบุอีเมล'
+                font_name: "tahoma"
+                password: True
+                multiline: False
+                size_hint: 1, 1
+                background_color: 255, 99, 71, 0.2  # ค่าสี RGBa สำหรับปุ่ม
+
+
+            Button:
+                text: 'ดำเนินการต่อ'
+                font_name: "tahoma"
+                size_hint: 1, 1
+                on_press: root.submit_registration()
+                background_color: 255, 99, 71, 0.2  # ค่าสี RGBa สำหรับปุ่ม
